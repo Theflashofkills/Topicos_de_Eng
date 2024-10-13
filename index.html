@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Dev Healthy</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Barra de Navegação -->
+    <nav class="navbar">
+        <div class="navbar-brand">Dev Healthy</div>
+        <div class="navbar-menu">
+            <button class="menu-button" onclick="toggleMenu('menuCadastrarPaciente')">Cadastrar Paciente</button>
+            <button class="menu-button" onclick="toggleMenu('menuConsultarPaciente')">Consultar Paciente</button>
+            <button class="menu-button" onclick="toggleMenu('menuCriarExame')">Criar Exame</button>
+            <button class="menu-button" onclick="toggleMenu('menuConsultarExame')">Consultar Exame</button>
+        </div>
+    </nav>
+
+    <!-- Menus Suspensos -->
+    <div id="menuCadastrarPaciente" class="dropdown-menu">
+        <h2>Cadastrar Paciente</h2>
+        <form id="formCadastrarPaciente">
+            <label>Nome:</label>
+            <input type="text" id="nomePaciente" required>
+
+            <label>Idade:</label>
+            <input type="number" id="idadePaciente" required>
+
+            <label>Sexo:</label>
+            <select id="sexoPaciente" required>
+                <option value="">Selecione</option>
+                <option value="Masculino">Masculino</option>
+                <option value="Feminino">Feminino</option>
+                <option value="Outro">Outro</option>
+            </select>
+
+            <label>Endereço:</label>
+            <input type="text" id="cidadePaciente" placeholder="Cidade" required>
+            <input type="text" id="ruaPaciente" placeholder="Rua" required>
+            <input type="number" id="numeroPaciente" placeholder="Número" required>
+            <input type="text" id="cepPaciente" placeholder="CEP" required>
+
+            <label>CPF:</label>
+            <input type="text" id="cpfPaciente" required>
+
+            <button type="submit">Cadastrar</button>
+        </form>
+    </div>
+
+    <div id="menuConsultarPaciente" class="dropdown-menu">
+        <h2>Consultar Paciente</h2>
+        <input type="text" id="buscarPaciente" placeholder="Buscar por nome" onkeyup="filtrarPacientes()">
+        <ul id="listaPacientes">
+            <!-- Lista de pacientes será populada aqui -->
+        </ul>
+    </div>
+
+    <div id="menuCriarExame" class="dropdown-menu">
+        <h2>Criar Exame</h2>
+        <form id="formCriarExame">
+            <label>Nome do Paciente:</label>
+            <select id="selectPaciente" required onchange="preencherInfoPaciente()">
+                <option value="">Selecione</option>
+                <!-- Opções serão populadas via JS -->
+            </select>
+
+            <div id="infoPaciente">
+                <p>Idade: <span id="infoIdade"></span></p>
+                <p>Sexo: <span id="infoSexo"></span></p>
+                <p>Endereço: <span id="infoEndereco"></span></p>
+                <p>CPF: <span id="infoCPF"></span></p>
+            </div>
+
+            <label>Tipo de Exame:</label>
+            <select id="tipoExame" required onchange="mostrarFormularioExame()">
+                <option value="">Selecione</option>
+                <option value="Sangue">Sangue</option>
+                <option value="Urina">Urina</option>
+                <option value="Raio-X">Raio-X</option>
+                <option value="Ultrassom">Ultrassom</option>
+                <option value="Eletrocardiograma">Eletrocardiograma</option>
+            </select>
+
+            <div id="formExameContainer">
+                <!-- Formulários específicos para cada exame serão inseridos aqui -->
+            </div>
+
+            <button type="submit">Criar Exame</button>
+        </form>
+    </div>
+
+    <div id="menuConsultarExame" class="dropdown-menu">
+        <h2>Consultar Exame</h2>
+        <form id="consultarExameForm">
+            <label>CPF:</label>
+            <input type="text" id="cpfExame" placeholder="Digite apenas números" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+            
+            <label>Nome:</label>
+            <input type="text" id="nomeExame" placeholder="Digite o nome">
+            
+            <button type="submit">Consultar</button>
+        </form>
+
+        <ul id="listaExames">
+            <!-- Lista de exames será populada aqui -->
+        </ul>
+    </div>
+
+    <!-- Carrossel de Curiosidades de Saúde -->
+    <div class="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <h3>Curiosidade 1</h3>
+                <p>Sabia que o coração humano bate cerca de 100 mil vezes por dia?</p>
+            </div>
+            <div class="carousel-item">
+                <h3>Curiosidade 2</h3>
+                <p>O cérebro humano é composto por aproximadamente 100 bilhões de neurônios.</p>
+            </div>
+            <div class="carousel-item">
+                <h3>Curiosidade 3</h3>
+                <p>O corpo humano possui cerca de 206 ossos.</p>
+            </div>
+        </div>
+        <button class="prev" onclick="mudarSlide(-1)">&#10094;</button>
+        <button class="next" onclick="mudarSlide(1)">&#10095;</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

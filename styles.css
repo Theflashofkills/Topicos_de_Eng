@@ -1,0 +1,192 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #4CAF50;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar-menu .menu-button {
+    background-color: #4CAF50;
+    border: none;
+    color: #fff;
+    padding: 10px 15px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.navbar-menu .menu-button:hover {
+    background-color: #45a049;
+}
+
+/* Menus Suspensos */
+.dropdown-menu {
+    display: none;
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.dropdown-menu.active {
+    display: block;
+}
+
+.dropdown-menu h2 {
+    margin-bottom: 15px;
+}
+
+.dropdown-menu form label {
+    display: block;
+    margin-top: 10px;
+}
+
+.dropdown-menu form input, 
+.dropdown-menu form select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+}
+
+.dropdown-menu form button {
+    margin-top: 15px;
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.dropdown-menu form button:hover {
+    background-color: #45a049;
+}
+
+/* Carrossel */
+.carousel {
+    position: relative;
+    max-width: 800px;
+    margin: 40px auto;
+    overflow: hidden;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    min-width: 100%;
+    padding: 40px;
+    text-align: center;
+}
+
+.carousel-item h3 {
+    margin-bottom: 15px;
+}
+
+.carousel .prev, .carousel .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(76, 175, 80, 0.8);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.carousel .prev {
+    left: 10px;
+}
+
+.carousel .next {
+    right: 10px;
+}
+
+.carousel .prev:hover, .carousel .next:hover {
+    background-color: rgba(76, 175, 80, 1);
+}
+
+/* Lista de Pacientes */
+#listaPacientes {
+    list-style: none;
+    margin-top: 15px;
+}
+
+#listaPacientes li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+#listaPacientes li:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+/* Detalhe do Exame */
+#detalheExame {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#detalheExame input, #detalheExame select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+}
+
+#detalheExame button {
+    margin-top: 15px;
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+#detalheExame button:hover {
+    background-color: #45a049;
+}
+
+/* Lista de Exames */
+#listaExames {
+    list-style: none;
+    margin-top: 15px;
+}
+
+#listaExames li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+#listaExames li:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
